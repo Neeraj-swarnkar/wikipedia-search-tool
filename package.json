@@ -1,7 +1,10 @@
 {
   "name": "wikipedia-search-tool",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
+  "proxy": "http://localhost:5000",
+  "type": "module",
+  "main": "src/pages/index.tsx",
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
@@ -10,16 +13,23 @@
     "@types/node": "^16.18.90",
     "@types/react": "^18.2.67",
     "@types/react-dom": "^18.2.22",
+    "axios": "^1.6.8",
+    "cors": "^2.8.5",
+    "dompurify": "^3.0.10",
+    "express": "^4.18.3",
+    "lodash": "^4.17.21",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-scripts": "5.0.1",
+    "react-window": "^1.8.10",
     "typescript": "^4.9.5",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
+    "server": "node ./src/server/server.js",
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "react-scripts test --transformIgnorePatterns \"node_modules/(?!axios)/\"",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
@@ -39,5 +49,10 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@types/dompurify": "^3.0.5",
+    "@types/lodash": "^4.17.0",
+    "@types/react-window": "^1.8.8"
   }
 }
